@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,num,j,sum=0,flag=0;
+    printf("\nInput:");
+    scanf("%d",&num);
+    for(i=num;i>0;i--){
+        for(j=i-1;j>0;j--){
+            printf(" ");
+        }
+        switch(flag){
+            case 0: 
+                      for(j=1;j<=num;j++){
+                          sum+=1;
+                          printf("%d ",sum);
+                      }  
+                      flag = 1;
+                      break;
+            default:
+                      sum+=num;
+                      for(j=1;j<=num;j++){
+                            printf("%d ",sum);
+                            sum-=1;
+                      }
+                      sum+=num;
+                      break;
+        }
+        printf("\n");
+    }
+    return 0;
+}
